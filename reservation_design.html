@@ -3,6 +3,77 @@
 <head>
 <meta charset="utf-8">
 <title>Reservation Project</title>
+<style>
+   .reservation-shell-head, .reservation-shell-head-left, .reservation-shell-head-weeks,
+   .reservation-shell-head-right, .reservation-shell-main, .reservation-shell-main-objects,
+   .reservation-shell-main-calendar, .reservation-shell-main-buttons {
+     position : absolute;
+   }
+   .reservation-shell-head {
+     top         : 0;
+     left        : 0;
+     right       : 0;
+     height      : 40px;
+   }
+   .reservation-shell-head-left {
+     top         : 4px;
+     left        : 4px;
+     height      : 32px;
+     width       : 128px;
+     background  : orange;
+   }
+   .reservation-shell-head-weeks {
+     top         : 4px;
+     right       : 0px;
+     width       : 64px;
+     height      : 32px;
+     background  : green;
+   }
+   .reservation-shell-head-right {
+     top         : 4px;
+     right       : 64px;
+     width       : 248px;
+     height      : 32px;
+     background  : blue;
+   }
+
+   .reservation-shell-main {
+     top         : 40px;
+     left        : 0;
+     bottom      : 40px;
+     right       : 0;
+   }
+   .reservation-shell-main-objects {
+     top         : 0;
+     bottom      : 0;
+     width       : 250px;
+     background  : #eee;
+   }
+   .reservation-shell-main-calendar {
+     width       : 0;
+     left        : 250px;
+     right       : 0;
+     background  : #ddd;
+   }
+
+   .reservation-shell-main-buttons {
+     width       : 0;
+     left        : 50px;
+     right       : 0;
+     background  : purple;
+   }
+ </style>
 </head>
 <body>
+  <div id="reservation">
+    <div class="reservation-shell-head">
+      <div class="reservation-shell-head-left">1</div>
+      <div class="reservation-shell-head-weeks">2</div>
+      <div class="reservation-shell-head-right">3</div>
+    </div>
+    <div class="reservation-shell-main">
+      <div class="reservation-shell-main-objects">4</div>
+      <div class="reservation-shell-main-calendar">5</div>
+      <div class="reservation-shell-main-buttons">6</div>
+    </div>
 </body>
