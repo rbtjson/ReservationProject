@@ -1,0 +1,12 @@
+ /*
+  * calendar.css
+  * Calendar control styles
+  */
+
+ .calendar-element {
+     width       : 32px;
+     height      : 32px;
+     background  : blue;
+     color       : orange;
+     border-radius : 3px;
+ }
