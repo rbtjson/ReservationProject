@@ -9,6 +9,7 @@
 
   <!-- React -->
   <script src="http://fb.me/react-0.12.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
 
   <!-- Our javascript -->
   <!-- <script src="js/reservation.calendar.js"></script> -->
@@ -32,6 +33,35 @@
  </table>
  -->
   <div id="calendar"></div>
-  <script src="js/reservation.calendar.js"></script>
+  <script type="text/jsx">
+      // React Code Goes Here
+
+/** @jsx React.DOM */
+
+var ResCal = React.createClass({
+
+  render: function(){
+    return (
+      <table>
+       <tr>
+         <th className="calendar-weekday">Monday</th>
+         <th className="calendar-weekday">Tuesday</th>
+       </tr>
+       <tr>
+         <td className="calendar-element">3</td>
+         <td className="calendar-element">4</td>
+       </tr>
+       <tr>
+         <td className="calendar-element">5</td>
+         <td className="calendar-element">6</td>
+       </tr>
+     </table>
+    );
+  }
+});
+
+React.render(<ResCal/>, document.getElementById('calendar'));
+
+    </script>
 </body>
 </html>
