@@ -4,9 +4,9 @@
   */
 
  .calendar-element {
-     width       : 32px;
+     width       : 64px;
      height      : 32px;
-     background  : blue;
+     background  : #999;
      color       : orange;
      border-radius : 3px;
  }

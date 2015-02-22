@@ -3,66 +3,69 @@
  * Calendar for Reservation Project
  */
 
-/*
- var child1 = React.createElement('li', null, 'First Text Content');
- var child2 = React.createElement('li', null, 'Second Text Content');
- var root = React.createElement('ul', { className: 'my-list' }, child1, child2);
+ /** @jsx React.DOM */
+ var WeekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+ var CalendarRowCount = 5;
 
- React.render( root, document.getElementById('calendar') );
-
- */
- // React.render( React.createElement('h1', null, 'Hello, world!'), document.getElementById('calendar') );
- /*
- <table>
-  <tr>
-    <th class="calendar-weekday">Monday</th>
-    <th class="calendar-weekday">Tuesday</th>
-  </tr>
-  <tr>
-    <td class="calendar-element">3</td>
-    <td class="calendar-element">4</td>
-  </tr>
-  <tr>
-    <td class="calendar-element">5</td>
-    <td class="calendar-element">6</td>
-  </tr>
-</table>
-*/
+ var CalendarHead = React.createClass({
+   render: function() {
+     return (
+         <th className="calendar-weekday">{this.props.weekday}</th>
+     );
+   }
+ });
 
 
+ var CalendarElement = React.createClass({
+   render: function() {
+     return (
+         <td className="calendar-element"></td>
+     );
+   }
+ });
 
-var Table = React.createClass({
+ var CalendarRow = React.createClass({
+   render: function() {
 
-  render: function render() {
-    var _self = this;
+     var weekRow = [];
 
-    var thead = React.DOM.thead({},
-      React.DOM.tr({},
-        this.props.cols.map(function (col) {
-          return React.DOM.th({}, col);
-        })));
+     var elements;
+     for (element = 0; element < this.props.reselements; element++) {
+       weekRow.push(<CalendarElement key={element}/>);
+     }
 
-        var tbody = this.props.rows.map(function (row) {
-          return React.DOM.tr({},
-            _self.props.cols.map(function (col) {
-              return React.DOM.td({}, row[col] || "");
-            }));
-          });
+     return (
+       <tr className="calendarRow">
+         {weekRow}
+       </tr>
+     );
+   }
+ });
 
-          return React.DOM.table({}, [thead, tbody]);
-        }
 
-      });
+ var ResCal = React.createClass({
+   render: function() {
+     var days = [];
+     var rows = [];
 
-      var container = document.getElementById('calendar');
+     this.props.weekdays.forEach(function(day) {
+         days.push(<CalendarHead weekday={day} key={day}/>);
+     });
 
-      var tableModel = {
-        cols: ["Monday", "Tuesday"],
-        rows: [
-          {"Monday": "1", "Tuesday": "2",},
-          {"Monday": "3", "Tuesday": "4"}
-          ],
+     var intervals;
+     for (intervals = 0; intervals < this.props.calrows; intervals++) {
+       rows.push(<CalendarRow reselements={this.props.calcolumns} key={intervals}/>);
+     }
 
-      }
+     return (
+       <table>
+        <thead>
+         <tr className="calendarHead">{days}</tr>
+         </thead>
+         <tbody>{rows}</tbody>
+       </table>
+     );
+   }
+ });
 
-      React.renderComponent(Table(tableModel), container);
+ React.render(<ResCal weekdays={WeekDays} calcolumns={WeekDays.length} calrows={CalendarRowCount}/>, document.getElementById('calendar'));

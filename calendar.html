@@ -12,56 +12,13 @@
   <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
 
   <!-- Our javascript -->
-  <!-- <script src="js/reservation.calendar.js"></script> -->
 
 </head>
 <body>
-<!--
-  <table>
-   <tr>
-     <th class="calendar-weekday">Monday</th>
-     <th class="calendar-weekday">Tuesday</th>
-   </tr>
-   <tr>
-     <td class="calendar-element">3</td>
-     <td class="calendar-element">4</td>
-   </tr>
-   <tr>
-     <td class="calendar-element">5</td>
-     <td class="calendar-element">6</td>
-   </tr>
- </table>
- -->
+
+  <!-- React code -->
   <div id="calendar"></div>
-  <script type="text/jsx">
-      // React Code Goes Here
+  <script type="text/jsx" src="js/reservation.calendar.js"></script>
 
-/** @jsx React.DOM */
-
-var ResCal = React.createClass({
-
-  render: function(){
-    return (
-      <table>
-       <tr>
-         <th className="calendar-weekday">Monday</th>
-         <th className="calendar-weekday">Tuesday</th>
-       </tr>
-       <tr>
-         <td className="calendar-element">3</td>
-         <td className="calendar-element">4</td>
-       </tr>
-       <tr>
-         <td className="calendar-element">5</td>
-         <td className="calendar-element">6</td>
-       </tr>
-     </table>
-    );
-  }
-});
-
-React.render(<ResCal/>, document.getElementById('calendar'));
-
-    </script>
 </body>
 </html>
