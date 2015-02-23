@@ -1,12 +1,16 @@
- /*
-  * calendar.css
-  * Calendar control styles
-  */
+/*
+* calendar.css
+* Calendar control styles
+*/
 
- .calendar-element {
-     width       : 64px;
-     height      : 32px;
-     background  : #999;
-     color       : orange;
-     border-radius : 3px;
- }
+.calendar-element {
+  width       : 64px;
+  height      : 32px;
+  background  : #999;
+  color       : orange;
+  border-radius : 3px;
+}
+
+.floatingTable {
+  float:left;
+}
