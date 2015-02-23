@@ -87,7 +87,7 @@ var TimeSlotTable = React.createClass({
 });
 
 
-var ResCal = React.createClass({
+var ResCalGrid = React.createClass({
   render: function() {
     var days = [];
     var rows = [];
@@ -113,15 +113,15 @@ var ResCal = React.createClass({
   }
 });
 
-var EntroCal= React.createClass({
+var ResCal= React.createClass({
   render : function() {
     return(
       <div>
         <TimeSlotTable timeslots={this.props.timeslots}/>
-        <ResCal weekdays={this.props.weekdays} slots={this.props.timeslots}/>
+        <ResCalGrid weekdays={this.props.weekdays} slots={this.props.timeslots}/>
       </div>
     );
   }
 });
 
-React.render(<EntroCal timeslots={TimeSlots} weekdays={WeekDays}/>, document.getElementById('calendar'));
+React.render(<ResCal timeslots={TimeSlots} weekdays={WeekDays}/>, document.getElementById('calendar'));
