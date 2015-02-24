@@ -86,39 +86,47 @@ var TimeSlotTable = React.createClass({
   }
 });
 
-
-var ResCalGrid = React.createClass({
+var ResCalHead = React.createClass({
   render: function() {
     var days = [];
-    var rows = [];
 
     this.props.weekdays.forEach(function(day) {
       days.push(<CalendarHead weekday={day} key={day}/>);
     });
 
-
-    for (intervals = 0; intervals < this.props.slots.length; intervals++) {
-      rows.push(<CalendarRow reselements={this.props.weekdays.length} key={intervals}/>);
-    }
-
     return (
-      <table className="floatingTable">
-        <thead>
+      <table>
           <tr className="calendarHead">{days}</tr>
-          </thead>
-          <tbody>
-          {rows}</tbody>
       </table>
     );
   }
 });
 
+
+var ResCalGrid = React.createClass({
+  render: function() {
+    var rows = [];
+
+    for (intervals = 0; intervals < this.props.row_count; intervals++) {
+      rows.push(<CalendarRow reselements={this.props.element_count} key={intervals}/>);
+    }
+
+    return (
+      <table className="resCalGrid">
+          <tbody>{rows}</tbody>
+      </table>
+    );
+  }
+});
+
+
 var ResCal= React.createClass({
   render : function() {
     return(
       <div>
+        <ResCalHead weekdays={this.props.weekdays}/>
         <TimeSlotTable timeslots={this.props.timeslots}/>
-        <ResCalGrid weekdays={this.props.weekdays} slots={this.props.timeslots}/>
+        <ResCalGrid element_count={this.props.weekdays.length} row_count={this.props.timeslots.length}/>
       </div>
     );
   }
