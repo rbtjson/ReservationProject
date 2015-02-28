@@ -38,14 +38,14 @@ var CalendarRow = React.createClass({
 
     var weekRow = [];
 
-    var elements;
+    var element;
     for (element = 0; element < this.props.reselements; element++) {
       weekRow.push(<CalendarElement key={element}/>);
     }
 
     return (
       <div className="calendarRow">
-      {weekRow}
+        {weekRow}
       </div>
     );
   }

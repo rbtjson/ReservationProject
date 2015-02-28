@@ -1,0 +1,19 @@
+
+
+.timeslotcol {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 7pt;
+    background: #ffffff;
+    -webkit-flex: 1 6 20%;
+    flex: 1 6 20%;
+    -webkit-order: 1;
+}
+
+.time-slot {
+    margin: 4px;
+    padding: 5px;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+}
