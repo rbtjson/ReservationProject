@@ -37,7 +37,7 @@ var ResObject = React.createClass({
 
     render: function() {
         return (
-            <div className="res_obj">{this.props.obj_name}</div>
+            <div className="res_obj">{this.props.res_objects.obj_name}</div>
         );
     }
 });
@@ -50,7 +50,7 @@ var DayHeader = React.createClass({
 
     render: function() {
         return (
-            <div className="day_header">{this.props.weekday} {this.props.date} {this.props.month}</div>
+            <div className="day_header">{this.props.weekdays.weekday} {this.props.weekdays.date} {this.props.weekdays.month}</div>
         );
     }
 });
@@ -94,12 +94,12 @@ var ResCal= React.createClass({
     render : function() {
         return(
             <div>
-                <ResObject timeslots={this.props.res_objects}/> <br/>
-                <DayHeader timeslots={this.props.weekdays}/> <br/>
+                <ResObject res_objects={this.props.res_objects[0]}/>
+                <DayHeader weekdays={this.props.weekdays[0]}/>
                 <TimeSlotCol timeslots={this.props.timeslots}/>
             </div>
         );
     }
 });
 
-React.render(<ResCal timeslots={TimeSlots} weekdays={WeekDays[0]} res_objects={ResObjects[0]}/>, document.getElementById('calendar'));
+React.render(<ResCal timeslots={TimeSlots} weekdays={WeekDays} res_objects={ResObjects}/>, document.getElementById('calendar'));
