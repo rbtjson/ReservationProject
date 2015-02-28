@@ -1,9 +1,19 @@
-/**
+/*
  * Created by Robert on 2015-02-28.
  */
 
 /** @jsx React.DOM */
-var WeekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+/* START MOCK DATA */
+var WeekDays = [
+    {weekday: 'mon', date: '28', month: 'feb'},
+    {weekday: 'tue', date: '1', month: 'feb'},
+    {weekday: 'wed', date: '2', month: 'feb'},
+    {weekday: 'thu', date: '3', month: 'feb'},
+    {weekday: 'fri', date: '4', month: 'feb'},
+    {weekday: 'sat', date: '5', month: 'feb'},
+    {weekday: 'sun', date: '6', month: 'feb'}
+];
 
 var TimeSlots = [
     {start_time: '07:00', end_time: '10:00'},
@@ -13,7 +23,37 @@ var TimeSlots = [
     {start_time: '19:00', end_time: '22:00'}
 ];
 
+var ResObjects = [
+    {obj_name: 'Laundry Room', obj_id: '123'},
+    {obj_name: 'Sauna', obj_id: '456'}
+];
+/* END MOCK DATA */
 
+
+/*
+ * Create a resobject
+ */
+var ResObject = React.createClass({
+
+    render: function() {
+        return (
+            <div className="res_obj">{this.props.obj_name}</div>
+        );
+    }
+});
+
+
+/*
+ * Create a single time slot
+ */
+var DayHeader = React.createClass({
+
+    render: function() {
+        return (
+            <div className="day_header">{this.props.weekday} {this.props.date} {this.props.month}</div>
+        );
+    }
+});
 
 /*
  * Create a single time slot
@@ -22,7 +62,7 @@ var TimeSlot = React.createClass({
 
     render: function() {
         return (
-            <div className="time-slot">{this.props.start_time}<br/>{this.props.end_time}</div>
+            <div className="time_slot">{this.props.start_time}<br/>{this.props.end_time}</div>
         );
     }
 });
@@ -40,7 +80,7 @@ var TimeSlotCol = React.createClass({
         });
 
         return (
-            <div className="timeslotcol">
+            <div className="timeslot_col">
                 {slots}
             </div>
         );
@@ -54,10 +94,12 @@ var ResCal= React.createClass({
     render : function() {
         return(
             <div>
+                <ResObject timeslots={this.props.res_objects}/> <br/>
+                <DayHeader timeslots={this.props.weekdays}/> <br/>
                 <TimeSlotCol timeslots={this.props.timeslots}/>
             </div>
         );
     }
 });
 
-React.render(<ResCal timeslots={TimeSlots} weekdays={WeekDays}/>, document.getElementById('calendar'));
+React.render(<ResCal timeslots={TimeSlots} weekdays={WeekDays[0]} res_objects={ResObjects[0]}/>, document.getElementById('calendar'));

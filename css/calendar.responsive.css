@@ -1,6 +1,6 @@
 
 
-.timeslotcol {
+.timeslot_col {
     margin: 4px;
     padding: 5px;
     border: 1px solid #dddddd;
@@ -11,8 +11,20 @@
     -webkit-order: 1;
 }
 
-.time-slot {
+.time_slot {
     margin: 4px;
+    padding: 5px;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+}
+
+.res_obj {
+    padding: 5px;
+    border-bottom: 1px solid #dddddd;
+    background: #ffffff;
+}
+
+.day_header {
     padding: 5px;
     border-bottom: 1px solid #dddddd;
     background: #ffffff;
