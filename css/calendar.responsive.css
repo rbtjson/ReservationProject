@@ -1,31 +1,47 @@
-
+.res_calendar {
+    background: #e7e3d7;
+}
 
 .timeslot_col {
-    margin: 4px;
+ /*   margin: 4px;
     padding: 5px;
     border: 1px solid #dddddd;
     border-radius: 7pt;
-    background: #ffffff;
     -webkit-flex: 1 6 20%;
     flex: 1 6 20%;
     -webkit-order: 1;
+    */
+    background: #e7e3d7;
+
 }
 
-.time_slot {
+.time_slot, .cal_grid_row_element, .cal_grid, .cal_grid_row  {
     margin: 4px;
     padding: 5px;
     border-bottom: 1px solid #dddddd;
-    background: #ffffff;
+    background: #c3b7ac;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #ffffff;
 }
 
 .res_obj {
+    display: block;
     padding: 5px;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
     border-bottom: 1px solid #dddddd;
-    background: #ffffff;
+    background: #816c5b;
 }
 
 .day_header {
     padding: 5px;
     border-bottom: 1px solid #dddddd;
-    background: #ffffff;
+    background: #c3b7ac;
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #ffffff;
 }
