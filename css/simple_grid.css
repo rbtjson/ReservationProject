@@ -1,13 +1,14 @@
 
 .grid_element {
-    width: 200px;
+    max-width: 200px;
     height: 100px;
     background: #999999;
     border-style: solid;
     margin: 5px;
+    float: left;
 }
 .grid_element_selected {
-    width: 200px;
+    max-width: 200px;
     height: 100px;
     background: #999999;
     border-style: solid;
