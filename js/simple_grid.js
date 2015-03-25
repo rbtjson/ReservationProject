@@ -8,29 +8,29 @@ simpleGrid = function () {
     var days = 7;
     var slots = 5;
 
+
     function renderGrid(rows, columns) {
         var gridHtml = '';
 
         for(var ri = 0; ri < rows; ri++ ) {
-            gridHtml += "<div class=row></div>";
+            gridHtml += '<div class="row">';
             for(var ci = 0; ci < columns; ci++) {
+                if(ci === 0) {
+                    gridHtml += '<div class="time_slot col-sm-1 col-xs-5">07:00 - 10:00</div>';
+                }
+                else {
+                    gridHtml += '<div class="time_slot col-sm-1 col-xs-5 visible-xs">07:00 - 10:00</div>';
+                }
+                // Create the grid cell
                 var cellId = ri.toString() + ":" + ci.toString();
-                gridHtml += "<div id=" + '"el' + cellId + '" class="grid_element col-md-6 col-xs-12">' + cellId + "</div>";
+                gridHtml += "<div id=" + '"el' + cellId + '" class="grid_element col-sm-1 col-xs-5">' + cellId + "</div>";
             }
+            gridHtml += "</div>";
         }
 
         $(gridPage).find('#calendar_grid').append(gridHtml);
     }
 
-    /*
-     <div id="el1" class="grid_element col-md-6 col-xs-12">1:1</div>
-    var data = ["a", "bunch", "of", "things", "to", "insert"];
-     var html = '';
-     for (var i=0; i < data.length; i++) {
-     html += "<td>" + data + "</td>";
-     }
-     $("#tablerow").append(html);
-     */
 
     return {
         init : function (page) {
@@ -38,7 +38,7 @@ simpleGrid = function () {
                 gridPage = page;
 
                 // Create the grid
-                renderGrid(days, slots);
+                renderGrid(slots, days);
 
                 // Add on click event listener to the grid
                 $(gridPage).find('#calendar_grid').on('click', function (evt) {

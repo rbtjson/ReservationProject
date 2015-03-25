@@ -1,17 +1,21 @@
 
 .grid_element {
-    max-width: 200px;
-    height: 100px;
-    background: #999999;
-    border-style: solid;
+    height: 75px;
+    background: #bbbbbb;
     margin: 5px;
     float: left;
 }
 .grid_element_selected {
-    max-width: 200px;
-    height: 100px;
-    background: #999999;
     border-style: solid;
-    border-color: #cccc33;
+    border-width: thick;
+    border-color: #88bbcc;
+}
+
+.time_slot {
+    height: 75px;
+    background: #bbbbbb;
     margin: 5px;
+    float: left;
+    border-style: solid;
+    border-color: #aa6600;
 }
